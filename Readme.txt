@@ -2,7 +2,8 @@ EBOOK TOOL(Calibre)電子書 製作軟體
 
 資料來源:https://key.chtouch.com/ContentView.aspx?P=924
 
-GITHUB: 
+GITHUB完整資料: https://github.com/jash-git/EBOOK-TOOL-Calibre
+
 
 【Calibre 軟體檔案】
 軟體版本：3.32
