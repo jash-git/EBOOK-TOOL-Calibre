@@ -1,0 +1,65 @@
+﻿function GoS2Check() {
+
+    if (document.getElementById("txtPetName").value == "") {
+        alert("請輸入暱稱!");
+        return false;
+    }
+    if (document.getElementById("txtEMail").value == "") {
+        alert("請輸入電子郵件信箱!");
+        return false;
+    }
+    if (document.getElementById("txtResponseContents").value == "") {
+        alert("您尚未輸入評論的內容!");
+        return false;
+    }
+};
+
+function ResponseVisionandError() {
+    var src = 'SubForm/ResponseVisionandError.aspx';
+    var html = "<div style='height:20px'></div><iframe marginwidth=0  marginheight=0 frameborder=0 name=EDetail scrolling=auto height=300px width=460 src=" + src + "></iframe>";
+
+    floatArea3 = document.getElementById("DIVE3");
+    floatArea3.style.display = "none";
+    divClose = '<div id="close" style="position:absolute; right:15px; top:10px; left:auto; bottom:auto;"><a href="javascript:closeFloatE3();">關閉視窗</a></div><br>';
+    //alert(p);
+    floatArea3.innerHTML = divClose + html;
+    floatArea3.style.border = "#B5CBD0 0px solid";
+    var screenWidth = document.body.clientWidth + document.body.scrollLeft;
+    var screenHeight = document.body.clientHeight;
+    var divWidth = floatArea3.offsetWidth;
+    var divHeight = floatArea3.offsetHeight;
+    var left = parseInt((screenWidth - divWidth) / 2);
+    var top = parseInt((screenHeight - divHeight) / 2);
+    //    var top = (window.screen.availHeight - 30 - 250) / 2;
+    //    var left = (window.screen.availWidth - 10 - 400) / 2; 
+    floatArea3.style.left = left / 2 + 60;
+    floatArea3.style.top = 100;
+
+    floatArea3.style.display = "block";
+    floatArea3.style.filter = "alpha(opacity = 98)";
+    return false;
+};
+
+function closeFloatE3() {
+    floatArea3 = document.getElementById("DIVE3");
+    floatArea3.innerHTML = "";
+    floatArea3.style.display = "none";
+};
+//部落格編輯用
+function getTextAreaInnerHtmlS2() {
+    if (document.getElementById("ListBoxS2").selectedIndex < 0) {
+        alert("您尚未選取分類!");
+        return false;
+    }
+    if (document.getElementById("txtTitleS2").value == "") {
+        alert("請輸入標題!");
+        return false;
+    }
+
+    var oEditor = CKEDITOR.instances.editor1.getData();
+    if (oEditor == "") {
+        alert("請輸入文章內容!");
+        return false;
+    }
+};
+
