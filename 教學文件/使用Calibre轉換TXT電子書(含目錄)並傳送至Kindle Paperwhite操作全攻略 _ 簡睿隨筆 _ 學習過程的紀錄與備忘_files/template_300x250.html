@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!-- saved from url=(0156)https://s0.2mdn.net/ads/richmedia/studio/pv2/60124625/20180831090942992/template_300x250.html?e=69&renderingType=2&leftOffset=0&topOffset=0&c=uVCGI0rT7v&t=1 -->
+<html data-useragent="Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>template_300x250</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="./Enabler_01_230.js.下載"></script>
+<script type="text/javascript" src="./utils.js.下載"></script>
+<script type="text/javascript" src="./animate_fix.js.下載"></script>
+<script type="text/javascript" src="./accounting.min.js.下載"></script>
+<script type="text/javascript" src="./handlebars.min.js.下載"></script>
+<script type="text/javascript" src="./mobile-detect.min.js.下載"></script>
+<script type="text/javascript" src="./moment.min.js.下載"></script>
+<script type="text/javascript" src="./af_dclk_profile.js.下載"></script>
+<script type="text/javascript" src="./dynamizer.js.下載"></script>
+<script type="text/javascript" src="./logic.js.下載"></script>
+<script type="text/javascript" src="./main.js(1).下載"></script>
+<style>
+#remarketing-pixels, #remarketing-pixels > img {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	display: none;
+}
+body{margin: 0}
+.border{position: absolute; background-color: rgb(0,0,0);}
+#bt{width: 300px; height: 1px; top:0px; left: 0px;}
+#bb{width: 300px; height: 1px; bottom:0px; left: 0px;}
+#bl{width: 1px; height: 250px; left:0px; top:0px;}
+#br{width: 1px; height: 250px; right: 0px; top:0px;}
+/*
+300px
+250px
+*/
+@font-face {
+  font-family: 'Excellence In Motion V2';
+  font-style: normal;
+  font-weight: normal;
+  src: url(font/excellence.woff) format('woff');
+}
+@font-face {
+  font-family: 'Excellence In Motion V2';
+  font-style: normal;
+  font-weight: bold;
+  src: url(font/excellence_black.woff) format('woff');
+}</style>
+<!-- write your code here -->
+<script src="./createjs-2015.11.26.min.js.下載"></script>
+<script src="./template_300x250.js.下載"></script>
+<script>
+function dummy()
+{
+	Enabler.setProfileId(1090863);
+}
+var build_scenario = {"opforeground":"#8fc6d7","opbackground":"#0086c2","typeViews":{"intro":"intro","image":"image","destination":"destination","summary":"summary"},"scenarioDatas":[{"type":"intro","foreground":"#e3004f","background":"#fdea71"},{"type":"image","foreground":"#e3004f","background":"#fdea71","image":"picture_un"},{"type":"destination","foreground":"#e3004f","background":"#fdea71","textTitle":"MADRID","textPrice":"699"},{"type":"image","foreground":"#ffeca7","background":"#1a0c41","image":"picture_deux"},{"type":"destination","foreground":"#ffeca7","background":"#1a0c41","textTitle":"PARIS","textPrice":"760"},{"type":"image","foreground":"#fee3ae","background":"#e74580","image":"picture_trois"},{"type":"destination","foreground":"#e74580","background":"#fee3ae","textTitle":"LONDON","textPrice":"721"},{"type":"summary","foreground":"#e74580","background":"#fee3ae"}],"scenario":"destinations1"};
+var canvas, stage, exportRoot;
+var getCurrentComp = function(){
+	var cc = AdobeAn.getComposition("666371784A326A42A555610F29AAD349") || 
+	AdobeAn.getComposition("E38D95D857F8CD44BE9694E4E2AE5A93") || 
+	AdobeAn.getComposition("5233930F4D9C8240A7F48E3C931FCAD0") || 
+	AdobeAn.getComposition("56A6FA03FE280D459E2465AB8E726B70");
+	return cc;
+}
+var comp = getCurrentComp();
+var lib = comp.getLibrary();
+var images = comp.getImages();
+biborgInjectLoadFonts(lib);
+var fontsLoaded = false;
+var fontsLoadedCallback;
+function init() {
+	LoadFonts([
+			"'Excellence In Motion V2'",
+			{ familly: "'Excellence In Motion V2'", weight: 'bold' }
+		], function(){
+			fontsLoaded = true;
+			if(fontsLoadedCallback) fontsLoadedCallback();
+		});
+	// initialise Enabler, quand tu as fini appel start
+	console.log("INIT HTML TEMPLATE");
+	airfrance.Logic.init(start);
+}
+function start(){
+	comp = getCurrentComp();
+	lib = comp.getLibrary();
+	images = comp.getImages();
+	biborgFixAnimateLibrary(lib);
+	biborgFixCreateJS();
+	InjectDynamicAssets(lib, images, createjs);
+	canvas = document.getElementById("canvas");
+	var comp=AdobeAn.getComposition("56A6FA03FE280D459E2465AB8E726B70");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	function onFontsLoaded(){
+		//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.template_300x250();
+	stage = new lib.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.enableMouseOver();	
+		//Registers the "tick" event listener.
+		fnStartAnimation = function() {
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}
+		//Code to support hidpi screens and responsive scaling.
+	function makeResponsive(isResp, respDim, isScale, scaleType) {		
+		var lastW, lastH, lastS=1;		
+		window.addEventListener('resize', resizeCanvas);		
+		resizeCanvas();		
+		function resizeCanvas() {			
+			var w = lib.properties.width, h = lib.properties.height;			
+			var iw = window.innerWidth, ih=window.innerHeight;			
+			var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+			if(isResp) {                
+				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+					sRatio = lastS;                
+				}				
+				else if(!isScale) {					
+					if(iw<w || ih<h)						
+						sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==1) {					
+					sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==2) {					
+					sRatio = Math.max(xRatio, yRatio);				
+				}			
+			}			
+			canvas.width = w*pRatio*sRatio;			
+			canvas.height = h*pRatio*sRatio;
+			canvas.style.width = w*sRatio+'px';				
+			canvas.style.height = h*sRatio+'px';
+			stage.scaleX = pRatio*sRatio;			
+			stage.scaleY = pRatio*sRatio;			
+			lastW = iw; lastH = ih; lastS = sRatio;		
+		}
+	}
+	makeResponsive(false,'both',false,1);
+		document.querySelector('#preloader').style.display='none';
+	}
+	if(fontsLoaded) onFontsLoaded();
+	else fontsLoadedCallback = onFontsLoaded;
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+<!-- write your code here -->
+</head>
+<body onload="init();" style="margin:0px;">
+	<div id="remarketing-pixels"></div>
+	<canvas id="canvas" width="300" height="250" style="display: block; background-color:rgba(255, 255, 255, 1.00)"></canvas>
+    <div id="preloader" style="background:white;width:300px;height:250px;position:absolute;top:0;left:0;display:flex;align-items:center;justify-content:center">
+		<img id="preloader_gif" src="./_preloader.gif">
+	</div>
+	<!-- BORDERs -->
+	<div id="bt" class="border"></div>
+	<div id="bb" class="border"></div>
+	<div id="bl" class="border"></div>
+	<div id="br" class="border"></div>
+
+</body></html>

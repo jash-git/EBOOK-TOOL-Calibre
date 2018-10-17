@@ -1,0 +1,100 @@
+
+body                                            { background:none }	
+/* #3c78a7, 0066cc */
+a:link, a:visited, a:hover, a:active            { color: #3377AA }
+
+/* Structure */
+/*#navbar-wrapper, #top, #middle, #page, 
+#gallery, #front-popular, #footer 				{ margin-left:0; margin-right:0 }*/
+.container              						{ max-width: 95%;  /*960px*/ }
+#page                   						{ font-size:14px; background:#ececec }
+#inner                                          { background:none }
+
+/* Navigation Bar*/
+#navbar-wrapper                                 { background:none }
+#navbar                                         { background: #303030; -webkit-border-radius: 10px 10px 0 0; -moz-border-radius: 10px 10px 0 0; border-radius: 10px 10px 0 0 }
+
+/*Index Page*/
+#top                                            { padding:10px 10px 0; background:#ececec }
+#headline                                       { width:62.8%; color:#333; font-size:16px }
+#headline div.meta                              { color:#000 }
+#headline h1.title a                            { color: #3c78a7 }
+#top .label, #top .label a, #headline  a        { color:#303030; padding:0 }
+#featured                                       { width:31.9%	}
+#headline, #featured                            { padding:1.1%; background: #fff; border-top:1px solid #ececec }
+#featured a:hover, #headline a:hover            { color:#808080 }
+#featured a img, #headline a img                { border:1px solid #ececec }
+
+#single-head-wrapper                            { background:#fff; float:left }
+#single_desc                                    { padding:2.6%% 1.1% }
+
+#middle                                         { background:#ececec }
+#category-bar                                   { padding:1.1%; background:#ffffff }
+.meta                                           { font-size:0.8em }
+.meta a                                         { color:#3C78A7 }
+
+.onecolumn img                                  { /*border:1px solid #ececec*/ }
+.tanbox img                                     { border:1px solid #ececec }
+.tanbox h3.title a, .onecolumn h3.title a       { letter-spacing:-0.05em }
+
+/* Content Page*/
+#content h2.title                               { color:#303030 }
+.entry img, .post a img, #front-list img        { border:1px solid #ececec }
+#map                                            { font-weight:bold; color:#333 }
+#map a                                          { color:#333 }
+span#map                                        { font-size:12px }
+
+/* Sidebar*/
+.spoiler h3                                     { border-bottom:1px solid #ececec }
+.spoiler h3 a                                   { color:#fff }
+#sidebar h3                                     { padding:5px 10px; color:#fff; background:#333 }
+
+/* Footer*/
+#gallery                                        { padding:1.6% 1.1%; background:#dedede }
+#gallery #video                                 { padding-left:0.5% }
+#gallery #random                                { width: 64.2% }
+#front-popular                                  { padding: 1.1%; background:#303030; -webkit-border-radius: 0 0 10px 10px; -moz-border-radius: 0 0 10px 10px; border-radius: 0 0 10px 10px }
+#front-popular .clearfloat                      { padding-top: 10px; padding-bottom: 10px }
+#front-popular h3, #recentpost a, 
+#mostcommented a, #recent_comments a            { color:#fff }
+#footer                                         { padding:10px 0 }
+
+/*  #Responsive Mobile (Portrait)
+================================================== */
+@media only screen and (max-width: 767px) {
+	.container #headline                        { width: 98% }
+	.container .wrapper #front-list, 
+	.container .wrapper #paged-list             { width: 96.3% }
+	.container #content.fullwidth               { width: 96% }
+}
+
+/* JERRY added */
+#featured {
+  font-size: 0.8em; !important;
+}
+
+#wp-calendar tbody a:link {
+  background-color: #3C78A7;
+  color: white;
+}
+
+.comment-body {
+  font-size: 1.4em;
+  line-height: 1.6em;
+}
+
+/* facebook comments */
+#fbComments {
+  font-size: 1.4em; !important;
+  line-height: 1.6em;
+}
+
+.fsm {
+  font-size: 1.4em; !important;
+  line-height: 1.6em;
+}
+
+.fbFeedbackPost .postText {
+  font-size: 1.4em; !important;
+  line-height: 1.6em;
+}

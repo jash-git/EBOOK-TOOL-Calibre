@@ -1,0 +1,8 @@
+
+// API CALLBACK
+(new PopularQueryRenderer(document.getElementById("queries"))).render({
+"title" : "簡睿隨筆Arethma",
+"maxNumberOfPopularQueries" : 10,
+"popularQueries" : [
+]
+})

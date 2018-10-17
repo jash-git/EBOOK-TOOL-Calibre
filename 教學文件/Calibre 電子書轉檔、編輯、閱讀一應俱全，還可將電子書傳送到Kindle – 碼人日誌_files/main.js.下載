@@ -1,0 +1,19 @@
+window.onload = function() {
+  var img_src = document.head.querySelectorAll("[property='og:image']")[0].content;
+  var img = new Image();
+  img.src = img_src;
+
+  img.onload = function() {
+    var og_width_meta = document.createElement("meta");
+    var og_height_meta = document.createElement("meta");
+
+    og_width_meta.setAttribute("property", "og:image:width");
+    og_width_meta.setAttribute("content", img.width);
+
+    og_height_meta.setAttribute("property", "og:image:height"); 
+    og_height_meta.setAttribute("content", img.height);
+
+    document.getElementsByTagName("head")[0].appendChild(og_width_meta);
+    document.getElementsByTagName("head")[0].appendChild(og_height_meta);
+  }
+}

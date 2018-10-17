@@ -1,0 +1,134 @@
+// Setup namespace for ad.
+var creative = {};
+
+creative.init = function () {
+  creative.setupDOMElements();
+
+  // Check if Enabler is initialized.
+  if (Enabler.isInitialized()) {
+    // Check if ad is visible to user.
+    if (Enabler.isVisible()) {
+      creative.enablerInitHandler();
+    } else {
+      Enabler.addEventListener(studio.events.StudioEvent.VISIBLE,
+        creative.enablerInitHandler);
+    }
+  } else {
+    Enabler.addEventListener(studio.events.StudioEvent.INIT,
+        creative.enablerInitHandler);
+  }
+};
+
+creative.setupDOMElements = function () {
+
+};
+
+creative.enablerInitHandler = function (event) {
+  creative.dynamicDataAvailable();
+//   creative.showAd();
+
+  if (Enabler.isPageLoaded()) {
+    creative.pageLoadHandler();
+  } else {
+    Enabler.addEventListener(
+    studio.events.StudioEvent.PAGE_LOADED, creative.pageLoadHandler);
+  }
+};
+/*
+ * Dynamic Content Enable code for Profile: 10189485
+ *
+ * The following code initializes the following dynamic variables for
+ * development testing and live serving of Fields associated to the above profile
+*/
+
+/* DynamicContent Start: HTML5 invocation code. */
+// Dynamic Content variables and sample values
+creative.dynamicDataAvailable = function () {
+	
+    Enabler.setProfileId(10189485);
+    var devDynamicContent = {};
+
+    devDynamicContent.Prospecting_Male_TW= [{}];
+    devDynamicContent.Prospecting_Male_TW[0]._id = 0;
+    devDynamicContent.Prospecting_Male_TW[0].Unique_ID = 1;
+    devDynamicContent.Prospecting_Male_TW[0].Image_Link = {};
+    devDynamicContent.Prospecting_Male_TW[0].Image_Link.Url = "http://diz36nn4q02zr.cloudfront.net/webapi/imagesV3/Original/SalePage/4677082/0/171714?v=1";
+    devDynamicContent.Prospecting_Male_TW[0].Landing_URL = {};
+    devDynamicContent.Prospecting_Male_TW[0].Landing_URL.Url = "http://shop.timberland.com.tw/SalePage/Index/4677082";
+    Enabler.setDevDynamicContent(devDynamicContent);
+
+/*
+ * You may access the variables in the following manner
+ * AFTER the Studio Enabler is initialized.
+ * var BG_ID = dynamicContent.Prospecting_Male_TW[0].Unique_ID;
+ * Note: be sure to use "dynamicContent", not "devDynamicContent"
+ * Note: be sure to use ExitOverride to create your exit URL dynamically; follow the instructions on our Help center: https://support.google.com/richmedia/answer/2664807
+*/
+    banner.init(dynamicContent.Prospecting_Male_TW[0]);
+};
+
+creative.pageLoadHandler = function (event) {
+  
+};
+
+
+creative.exitClickHandler_1 = function (event) {
+    Enabler.exitOverride('exit_1', addSuffix(dynamicContent.Prospecting_Male_TW[0].Landing_URL.Url, 'exit_suffix'));
+  };
+  
+// Start creative once all elements in window are loaded.
+window.addEventListener('load', creative.init.bind(creative));
+
+
+// NOTE: Here ends the pasted section from Studio.
+
+// add URL suffix 
+function addSuffix(url, dcmParameter) {
+    var urlSuffix = Enabler.getParameter(dcmParameter);
+    var _url = '';
+
+    if (url) {
+        var symbol = (url.indexOf('?') > -1) ? '&' : '?';
+        if (urlSuffix) {
+            while (urlSuffix.charAt(0) == '?' || urlSuffix.charAt(0) == '&') {
+                urlSuffix = urlSuffix.substring(1);
+            }
+            if (urlSuffix.indexOf('?') > -1) {
+                urlSuffix = urlSuffix.replace(/\?/g, '&');
+            }
+        }
+        _url = url + symbol + urlSuffix;
+    }
+    return _url;
+}
+
+
+(function() {
+    var banner = window.banner = {};
+
+    banner.init = function(Prospecting_Male_TW){
+        banner.initBackground();
+        banner.initProduct( Prospecting_Male_TW.Image_Link.Url );
+
+        document.getElementById("container").addEventListener("click", banner.click);
+    };
+
+    banner.initBackground = function(){
+        document.getElementById("container").style.background = "url('" + "300x600_bg.jpg" + "') no-repeat";
+    }
+
+    banner.initProduct = function(img){
+        document.getElementById("product_box").style.background = "url('" + img + "') no-repeat center center";
+        document.getElementById("product_box").style.backgroundSize = "100%";
+    }
+
+    banner.click = function(event){
+        if(this.id == "container"){
+            creative.exitClickHandler_1();
+        }
+        
+    };
+
+
+})();
+

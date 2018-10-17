@@ -1,0 +1,139 @@
+#madmenu { 
+	float:left; 
+	padding: 0;
+	margin: 0;
+	clear:both;
+	width:100%;
+	font-weight:bold;
+	text-transform:uppercase;
+	font-size:10px;
+	}
+
+#madmenu ul {
+	float:left; 
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+    z-index: 99999 !important;
+	}
+
+#madmenu li { 
+	float: left;
+	margin: 0;
+	padding:0;
+	border-right:1px solid #303030;
+	}
+
+#madmenu li:hover {
+	background: #5b5b5b;
+	}
+
+#madmenu li a, #madmenu li a:visited { 
+	margin:0;
+	padding:7px 14px;
+	color:#eeeeee;
+	display:block;
+	}
+
+#madmenu li li { 
+	float: none;
+	margin: 0;
+	padding:0;
+	border-right:0px solid #303030;
+	}
+
+#madmenu li ul {
+	display:none;
+	position: absolute;
+	width: 154px;
+	left: -999em;
+	padding:0;
+	text-transform: none;
+
+	}
+
+#madmenu li ul ul { 
+	margin: -26px 0 0 154px;
+    z-index: 9991 !important;
+	}
+
+#madmenu li:hover ul ul, #madmenu li:hover ul ul ul, #madmenu li.sfhover ul ul, #madmenu li.sfhover ul ul ul {
+	left: -999em;
+	}
+
+#madmenu li:hover ul, #madmenu li li:hover ul, #madmenu li li li:hover ul, #madmenu li.sfhover ul, #madmenu li li.sfhover ul, #madmenu li li li.sfhover ul { 
+	/*display:block;
+	left: auto;*/
+	z-index:9999 !important;
+	}
+
+
+#madmenu a, #madmenu a:visited, #madmenu a:link {
+	display: block;
+	text-decoration:none;
+	padding:7px 14px;
+	margin:0;
+	color: #ffffff;
+	position:relative
+}
+
+#madmenu a:hover, #madmenu a:active {
+    background: #5b5b5b;
+	color:#fff;
+	}
+
+#madmenu li li a, #madmenu li li a:link, #madmenu li li a:visited {
+	color:#fff;
+	/*background: #5b5b5b url(images/dots_nav.gif) repeat-x top;*/
+	background: #5b5b5b;
+	padding:7px 14px;
+	float: none;
+	margin: 0;
+	}
+
+#madmenu li li a:hover, #madmenu li li a:active {
+	background: #909090;
+	color:#fff;
+	}
+
+#madmenu li li li a {
+	padding:5px 14px;
+	background: #909090;
+	}
+
+#madmenu li li li a:hover {
+	color: #fff;
+	}
+
+#madmenu li li li a:active {
+	color: #fff;
+	background: #909090;
+}
+
+/**
+Stylesheet for SooperFish by www.SooperThemes.com
+Author: (Shared on MafiaShare.net) Jurriaan Roelofs
+*/
+/* Configuration of menu width */
+html body ul.sf-menu ul,html body ul.sf-menu ul li{width:180px}
+html body ul.sf-menu ul ul{margin:0 0 0 180px}
+/* Framework for proper showing/hiding/positioning */
+/* DO NOT EDIT FROM HERE */
+ul.sf-menu,ul.sf-menu *{margin:0;padding:0}
+ul.sf-menu{display:block;position:relative}
+ul.sf-menu li{display:block;float:left;list-style:none;position:relative}
+ul.sf-menu li:hover{visibility:inherit}/* fixes IE7 'sticky bug' */
+ul.sf-menu a{display:block;position:relative}
+ul.sf-menu ul{left:-999999px;position:absolute;top:auto;width:150px}
+ul.sf-menu ul a{zoom:1}/* IE6/7 fix */
+ul.sf-menu ul li{float:left;width:150px}
+ul.sf-menu ul ul{margin:0 0 0 150px;top:0}
+ul.sf-menu li:hover ul,ul.sf-menu li:focus ul,ul.sf-menu li.sf-hover ul,ul.sf-menu ul li:hover ul,ul.sf-menu ul li:focus ul,ul.sf-menu ul li.sf-hover ul,ul.sf-menu ul ul li:hover ul,ul.sf-menu ul ul li:focus ul,ul.sf-menu ul ul li.sf-hover ul,ul.sf-menu ul ul ul li:hover ul,ul.sf-menu ul ul ul li:focus ul,ul.sf-menu ul ul ul li.sf-hover ul{left:auto}
+ul.sf-menu li:hover ul ul,ul.sf-menu li:focus ul ul,ul.sf-menu li.sf-hover ul ul,ul.sf-menu ul li:hover ul ul,ul.sf-menu ul li:focus ul ul,ul.sf-menu ul li.sf-hover ul ul,ul.sf-menu ul ul li:hover ul ul,ul.sf-menu ul ul li:focus ul ul,ul.sf-menu ul ul li.sf-hover ul ul,ul.sf-menu ul ul ul li:hover ul ul,ul.sf-menu ul ul ul li:focus ul ul,ul.sf-menu ul ul ul li.sf-hover ul ul{left:-999999px}
+
+/* autoArrows CSS */
+span.sf-arrow{background:url(../images/arrows-white.png) no-repeat 0 0;display:block;font-size:1px;height:7px;overflow:hidden;position:absolute;right:8px;top:12px;width:7px}
+ul ul span.sf-arrow{background-position:0 100%;right:10px;top:8px}
+.sf-parent a {
+	padding-right:25px !important
+}

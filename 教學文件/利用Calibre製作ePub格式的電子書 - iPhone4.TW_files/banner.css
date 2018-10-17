@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+.clearfix {
+    clear: both;
+}
+
+#content > div {
+  position: absolute;
+}
+
+div#container {
+    cursor: pointer;
+    height: 600px;
+    width: 300px;
+}
+
+div#product_box {
+    height: 250px;
+    width: 298px;
+    top: 100px;
+    left: 1px;
+}

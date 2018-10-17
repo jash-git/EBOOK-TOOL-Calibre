@@ -1,6 +1,13 @@
 EBOOK TOOL(Calibre)電子書 製作軟體
 
 資料來源:https://key.chtouch.com/ContentView.aspx?P=924
+https://coder.tw/?p=5979
+https://iphone4.tw/forums/showthread.php?t=85167
+http://jdev.tw/blog/4388/kindle-with-calibre-conversion
+
+https://www.youtube.com/watch?v=3pe278yt6uM
+https://www.youtube.com/watch?v=9SmRlNjaNx0
+https://www.youtube.com/watch?v=I-4qY-DghKM
 
 GITHUB完整資料: https://github.com/jash-git/EBOOK-TOOL-Calibre
 
